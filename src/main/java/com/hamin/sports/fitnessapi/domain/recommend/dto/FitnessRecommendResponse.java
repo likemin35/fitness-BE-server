@@ -1,5 +1,7 @@
 package com.hamin.sports.fitnessapi.domain.recommend.dto;
 
+import com.fasterxml.jackson.annotation.JsonAlias;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.*;
 import java.util.List;
 import java.util.Map;
@@ -9,6 +11,7 @@ import java.util.Map;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class FitnessRecommendResponse {
 
     private int step;
@@ -26,6 +29,7 @@ public class FitnessRecommendResponse {
     @NoArgsConstructor
     @AllArgsConstructor
     @Builder
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class ExerciseRecommendation {
         private List<ExerciseItem> recommended_exercises;
     }
@@ -35,6 +39,7 @@ public class FitnessRecommendResponse {
     @NoArgsConstructor
     @AllArgsConstructor
     @Builder
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class ExerciseItem {
         private String name;
         private String reason;
@@ -48,10 +53,13 @@ public class FitnessRecommendResponse {
     @NoArgsConstructor
     @AllArgsConstructor
     @Builder
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class FacilityItem {
         private String name;
+        @JsonAlias({"type", "category"})
         private String type;
         private String address;
+        @JsonAlias({"distanceKm", "distance_km"})
         private double distanceKm;
     }
 }
