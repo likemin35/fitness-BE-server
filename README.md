@@ -8,6 +8,11 @@ MySQL 기반 도메인 데이터를 관리하고, 필요 시 FastAPI AI 서버�
 - AWS EC2에 배포해 운영
 - AI 서버와 프론트엔드와는 분리된 레포지토리/배포 단위
 
+## Related Repositories
+
+- AI Server: [fitness_AI_server](https://github.com/likemin35/fitness_AI_server)
+- Frontend: [fitness-front-server](https://github.com/likemin35/fitness-front-server)
+
 ## Overview
 
 - Spring Boot 기반 REST API
